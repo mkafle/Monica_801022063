@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: #000000;
+    font-size: 15px;
+    font-color: #000000;
+    background-image:url(sky.jpg);
+    -webkit-background-size: cover;
+    margin: 100px;
+    font-family: 'Poppins', sans-serif;
+}
+#wrapper {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#header {
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align:center;
+    font-color: #000000;
+}
+
+#logo {
+    text-shadow: 1px 1px 1px #000000;
+    color: #ffffff;
+    font-size: 36px;
+    margin: 10px 0px 0px 10px;
+}
+.post {
+    background-color: #ffffff;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 5px;
+}
+h1{
+    font-size: 18px;
+}
+.post p {
+    margin-bottom: 10px;
+}
+
+.post p:last-child{
+    margin-bottom: 0px;
+}

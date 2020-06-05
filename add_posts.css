@@ -1,0 +1,56 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding:0;
+    font-family:'Poppins', sans-serif;
+}
+body{
+    background:#ccc;
+    background-image:url(sky.jpg);
+    -webkit-background-size: cover;
+}
+.form-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    height: 80vh;
+}
+.form-container .form-wrap{
+    width:70%;
+    background: #fff;
+    border-radius:2px;
+    padding:10px 14px;
+}
+.form-container .form-wrap h2{
+    text-align:center;
+    margin: 0px 0px 20px;
+}
+.form-container .form-wrap .form-box {
+    margin: 0px 0px 20px;
+}
+.form-container .form-wrap .form-box input[type="text"] {
+    padding: 4px 9px;
+    width: 100%;
+    border: 1px solid #3b3b3b;
+    border-radius:3px;
+}
+.form-container .form-wrap .form-box textarea {
+    width: 100%;
+    height:200px;
+    padding: 4px 9px;
+    border:1px solid #3b3b3b;
+    border-radius:3px;
+}
+.form-container .form-wrap .form-submit{
+    display:flex;
+    justify-content: center;
+}
+.form-container .form-wrap .form-box input[type="submit"] {
+    padding: 4px 9px;
+    background: #3535;
+    font-size: 17px;
+    font-weight:700;
+    border-radius:2px;
+    color: #fff;
+}
