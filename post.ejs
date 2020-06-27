@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="animated fadeOutDown>
+<head>
+  <meta charset="UTF-8">
+
+<%- include('includes/headerLinks.ejs') %>
+</head>
+
+<body>
+    <% if(session){ %> <a href="http://localhost:3000/logout" class="logout">Logout</a> <%}%>
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">Monica's Blog Post</div>
+    </div>
+    <div id = "content">
+        <% if(error){ %> 
+            <h1 style="background-color: red;color: white;padding: 10px"><%= error %></h1> 
+        <%} else{%>
+            <div class="post">
+                <h1><%= data.post_title %></h1>
+                <p><%= data.post_description %></p>
+            </div>
+        <%} %>
+    </div>
+</div>
+</body>

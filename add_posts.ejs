@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <%- include('includes/headerLinks.ejs') %>
+    
+
+</head>
+<body>
+<div class="form-container logtop">
+    
+    <form action="javascript://" class="form-wrap loader_upper" method="POST" id="addPost_" novalidate>
+        <% if(session){ %> <a href="http://localhost:3000/logout" class="logout">Logout</a> <%}%>
+        <h2> Create a New Post</h2>
+        <div class="form-box">
+            <input type="text" placeholder="title" name="title" id="title" required/>
+        </div>
+        <div class="form-box">
+            <textarea rows="25"  cols="10" placeholder="content" name="post_content" id="post_content" required></textarea>
+        </div>
+        <input type="file" id="post_file">
+        <div class="form-submit">
+            <button type="Submit" >post</button>
+        </div>
+        
+    </form>
+</div>
+
+    <%- include('includes/jsLinks.ejs') %>
+</body>
+</html>

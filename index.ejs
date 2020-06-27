@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- include('includes/headerLinks.ejs') %>
+</head>
+<header>
+    <div class="container">
+        <div class="boxed">
+            <div class="row">
+                <div class="navbar">
+                    <nav>
+                        <ul>
+                            <% if(session){ %> 
+                                <li><a href="http://localhost:3000/logout">logout</a></li>
+                            <%} else{ %>
+                                <li><a href="http://localhost:3000/login">Admin Login</a></li>
+                            <%}%>
+                            <li><a href="#">Style Switcher |</a></li>
+                            <li><a href="#">Font Resizer |</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <header>
+
+                    <div class="boxed1"></div>
+
+                </header>
+
+                <body>
+
+                    <div id="container"></div>
+                    <div class="button">
+                        <button id="button">click to change color!</button>
+
+                        
+                    </div>
+                </body>
+
+
+            </div>
+
+            <div class="mainbox">
+
+                <% if(data.length > 0){ %>
+                    <% for(post of data){ %>
+                        <div class="miniBox">
+                            <h4><%=post.post_title%></h4>
+                            <p><%=post.post_description%></p>
+                            <a class="btn btn-secondry" href="http://localhost:3000/post?id=<%=post.post_id%>">Read More</a>
+                        </div>                        
+                    <% } %>
+                <% } else{ %>
+                    <h4>No posts</h4>
+                <% } %>
+
+            </div>
+
+
+            <body>
+                <div class="footer">
+                    <p>Footer (Copyright)</p>
+                </div>
+        </div>
+        </body>
+        <%- include('includes/jsLinks.ejs') %>
+</html>

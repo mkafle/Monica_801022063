@@ -1,5 +1,7 @@
-function change(list)
-{
-    var val=list.options[list.selectedIndex]
-    document.body.style.background=document.getElementById(list).innerHTML;
-}
+let colors=['yellow', 'blue', 'pink'];
+
+button.addEventListener('click', function(){
+    var randomColor = colors[Math.floor(Math.random() * colors.length)]
+    let container = document.getElementById('container')
+    container.style.background = randomColor;
+})

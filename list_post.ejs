@@ -1,0 +1,51 @@
+<html>
+<head>
+    <%- include('includes/headerLinks.ejs') %>
+</head>
+<body>
+    <% if(session){ %> <a href="http://localhost:3000/logout" class="logout">Logout</a> <%}%>
+<table class="loader_upper" id="post_list">
+    <caption>Post List</caption>
+    <tr>
+        <th>Post Title</th>
+        <th>Operations</th>
+    </tr>
+    <tr>
+        <td>Post 1</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+        <td>Enable/Disable</td>
+    </tr>
+
+    <% if(data.length > 0){ %>
+        <% for(post of data){ %>
+            <tr id="post_<%=post.post_id%>">
+                <td><%= post.post_title %></td>
+                <td><%= post.post_description %></td>
+                <td><a href="http://localhost:3000/editpost?id=<%=post.post_id%>" >edit</a></td>
+                <td><a href="javascript://" class="del_post" data-id="<%=post.post_id%>">delete</a></td>
+                <td>
+                    <button id="en_<%= post.post_id %>" 
+                            data-status="enabled"
+                            data-id="<%=post.post_id%>" 
+                            class="status" <% if(post.status != 'disabled'){ %> disabled <% } %> 
+                            >enable
+                    </button> / 
+                    <button id="dis_<%= post.post_id %>" 
+                            data-status="disabled" 
+                            data-id="<%=post.post_id%>" 
+                            class="status" <% if(post.status != 'enabled'){ %> disabled <% } %>
+                            >disable
+                    </button>
+                </td>
+            </tr>
+        <% } %>
+    <% } else{ %>
+        <h4>No posts</h4>
+    <% } %>
+
+</table>
+    <%- include('includes/jsLinks.ejs') %>
+</body>
+</html>
