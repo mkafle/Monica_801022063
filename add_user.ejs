@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <%- include('includes/headerLinks.ejs') %>
+
+<body>
+    <div class="Add-user logtop">
+        <h1>New User SignUp</h1>
+        <form action="http://localhost:3000/signup" method="POST">
+            <% if(session){ %> <a href="" class="logout">Logout</a> <%}%>
+            <p> Username </p>
+            <input type="text" name="username" placeholder="Enter Username" value="<% if(old_val){ %> <%=old_val%> <%}%>" required>
+            <div class="error" style="color:red"><% if(error){ %> <%=error%> <%}%></div>
+            <p> Password </p>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="submit" value="Add User">
+        </form>
+    </div>
+    <%- include('includes/jsLinks.ejs') %>
+</body>
+</head>
+
+</html>

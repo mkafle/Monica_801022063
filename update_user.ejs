@@ -1,0 +1,24 @@
+<html>
+<head>
+    
+    <%- include('includes/headerLinks.ejs') %>
+<body>
+<div class="update-user logtop">
+    <% if(session){ %> <a href="http://localhost:3000/logout" class="logout">Logout</a> <%}%>
+    <h1>Update User</h1>
+    <form action="http://localhost:3000/updateUser" method="POST" >
+        <input type="hidden" name="id" value="<%=data.user_id%>">
+        <p> Username </p>
+        <input type="text" name="username" value="<%=data.username%>" placeholder="Enter Full Name" required>
+        <p> password </p>
+        <input type="password" name="password" value="<%=data.password%>" placeholder="Enter Phone Number" required>
+        <input type="submit" name="" value="Update">
+    </form>
+</div>
+</body>
+</head>
+</html>
+
+
+
+

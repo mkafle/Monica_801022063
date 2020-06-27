@@ -1,0 +1,47 @@
+<html>
+<head>
+    <
+    <%- include('includes/headerLinks.ejs') %>
+</head>
+<body>
+    <% if(session){ %> <a href="http://localhost:3000/logout" class="logout">Logout</a> <%}%>
+<table class="loader_upper" id="user_list">
+    <caption>User List</caption>
+    <tr>
+        <th>Username</th>
+        <th>Operations</th>
+
+    </tr>
+
+
+
+
+    <% if(data.length > 0){ %>
+        <% for(user of data){ %>
+            <tr id="user_<%=user.user_id%>">
+                <td><%= user.username %></td>
+                <td><a href="http://localhost:3000/edituser?id=<%=user.user_id%>" >edit</a></td>
+                <td><a href="javascript://" class="del_user" data-id="<%=user.user_id%>">delete</a></td>
+                <td>
+                    <button id="en_<%= user.user_id %>" 
+                            data-status="enabled"
+                            data-id="<%=user.user_id%>" 
+                            class="status_user" <% if(user.status != 'disabled'){ %> disabled <% } %> 
+                            >enable
+                    </button> / 
+                    <button id="dis_<%= user.user_id %>" 
+                            data-status="disabled" 
+                            data-id="<%=user.user_id%>" 
+                            class="status_user" <% if(user.status != 'enabled'){ %> disabled <% } %>
+                            >disable
+                    </button>
+                </td>
+            </tr>
+        <% } %>
+    <% } else{ %>
+        <h4>No users</h4>
+    <% } %>
+</table>
+<%- include('includes/jsLinks.ejs') %>
+</body>
+</html>
